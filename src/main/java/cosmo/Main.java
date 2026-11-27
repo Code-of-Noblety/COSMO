@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.image.Image;
 
 
 public class Main extends Application {
@@ -26,6 +27,9 @@ public class Main extends Application {
         stage.setResizable(false);
         stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
+        stage.getIcons().add(
+            new Image(Main.class.getResourceAsStream("/cosmo/images/icon.png"))
+        );
         stage.show();
     }
 

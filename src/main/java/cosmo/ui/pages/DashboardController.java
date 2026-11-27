@@ -73,15 +73,18 @@ public class DashboardController {
             overdue.forEach(task -> addRow(task, true));
         }
        
-        if (today.isEmpty()) {
-           Label emptyLabel = new Label("No tasks due today. What a beast!");
-           emptyLabel.getStyleClass().add("empty-state");
-           emptyLabel.setMaxWidth(Double.MAX_VALUE);
-           scheduleList.getChildren().add(emptyLabel);
-       } else {
-           addSection("TODAY  " + today.size(), false);
-           today.forEach(task -> addRow(task, false));
-       }
+
+        if (overdue.isEmpty() && today.isEmpty()) {
+            Label emptyLabel = new Label("No tasks due today. What a beast!");
+            emptyLabel.getStyleClass().add("empty-state");
+            emptyLabel.setMaxWidth(Double.MAX_VALUE);
+            scheduleList.getChildren().add(emptyLabel);
+        }
+
+        if (!today.isEmpty()) {
+            addSection("TODAY  " + today.size(), false);
+            today.forEach(task -> addRow(task, false));
+        }
     }
 
 

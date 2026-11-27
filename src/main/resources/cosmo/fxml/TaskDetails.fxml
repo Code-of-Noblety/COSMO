@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="panel" managed="false" maxHeight="-Infinity" maxWidth="310.0" minWidth="310.0" prefWidth="310.0" spacing="2.0" styleClass="card" visible="false" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.parts.TaskDetailsController">
+   <padding>
+      <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+   </padding>
+   <children>
+
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label styleClass="panel-key" text="TASK DETAILS" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#onClose" styleClass="icon-button" text="✕" />
+         </children>
+      </HBox>
+
+      <Label fx:id="titleLabel" maxWidth="Infinity" styleClass="details-title" text="Finish Digital Logic Design" wrapText="true" />
+
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <children>
+            <Label fx:id="categoryPill" styleClass="pill, pill-academic" text="Academic" />
+            <Label fx:id="statusPill" styleClass="pill, status-in-progress" text="In Progress" />
+            <Label fx:id="priorityLabel" styleClass="priority-high" text="⚑ High" />
+         </children>
+      </HBox>
+
+      <Label fx:id="noteLabel" styleClass="panel-note, note-today" text="● Due today" />
+
+      <Label styleClass="panel-key" text="DESCRIPTION" />
+      <Label fx:id="descriptionLabel" maxWidth="Infinity" styleClass="panel-text" text="Truth tables and K-maps." wrapText="true" />
+
+      <Label styleClass="panel-key" text="STARTS" />
+      <Label fx:id="startsLabel" styleClass="panel-text" text="Today · 9:00 AM" />
+
+      <Label styleClass="panel-key" text="DUE" />
+      <Label fx:id="dueLabel" styleClass="panel-text" text="Today · 5:00 PM" />
+
+      <HBox spacing="8.0" styleClass="panel-actions">
+         <children>
+            <Button fx:id="completeButton" onAction="#onToggleCompleted" styleClass="btn, btn-primary" text="Mark complete" />
+            <Button onAction="#onEdit" styleClass="btn" text="Edit" />
+            <Button onAction="#onDelete" styleClass="btn, btn-danger" text="Delete" />
+         </children>
+      </HBox>
+
+   </children>
+</VBox>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="overlay" managed="false" styleClass="overlay" visible="false" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.popups.ConfirmDeleteController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="380.0" prefWidth="380.0" spacing="12.0" styleClass="dialog">
+         <padding>
+            <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+         </padding>
+         <children>
+            <Label styleClass="dialog-title" text="Delete task?" />
+            <Label fx:id="messageLabel" styleClass="muted-text" text="“Task title” will be permanently removed." wrapText="true" />
+            <HBox alignment="CENTER_RIGHT" spacing="8.0">
+               <VBox.margin>
+                  <Insets top="4.0" />
+               </VBox.margin>
+               <children>
+                  <Button onAction="#onCancelClicked" styleClass="btn" text="Cancel" />
+                  <Button onAction="#onConfirmClicked" styleClass="btn, btn-danger-solid" text="Delete" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

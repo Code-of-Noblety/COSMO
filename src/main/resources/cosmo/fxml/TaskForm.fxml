@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="overlay" managed="false" styleClass="overlay" visible="false" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.popups.TaskFormController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="520.0" prefWidth="520.0" spacing="12.0" styleClass="dialog">
+         <padding>
+            <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+         </padding>
+         <children>
+
+            <Label fx:id="formTitle" styleClass="dialog-title" text="New Task" />
+
+            <VBox spacing="4.0">
+               <children>
+                  <Label styleClass="form-label" text="Title *" />
+                  <TextField fx:id="titleField" styleClass="field" />
+               </children>
+            </VBox>
+
+            <VBox spacing="4.0">
+               <children>
+                  <Label styleClass="form-label" text="Description" />
+                  <TextArea fx:id="descriptionArea" prefRowCount="3" styleClass="field" wrapText="true" />
+               </children>
+            </VBox>
+
+            <GridPane hgap="10.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="50.0" />
+                  <ColumnConstraints percentWidth="50.0" />
+               </columnConstraints>
+               <children>
+                  <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="form-label" text="Category" />
+                        <ComboBox fx:id="categoryBox" visibleRowCount="4" maxWidth="Infinity" onAction="#onCategoryPicked" styleClass="field" value="Academic" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="form-label" text="Priority" />
+                        <ComboBox fx:id="priorityBox" maxWidth="Infinity" styleClass="field" value="Medium" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+
+            <!-- Only shown when "+ New category…" is picked -->
+            <VBox fx:id="newCategoryBox" managed="false" spacing="4.0" visible="false">
+               <children>
+                  <Label styleClass="form-label" text="New category name" />
+                  <TextField fx:id="newCategoryField" promptText="e.g. Health" styleClass="field" />
+               </children>
+            </VBox>
+
+            <GridPane hgap="10.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="50.0" />
+                  <ColumnConstraints percentWidth="50.0" />
+               </columnConstraints>
+               <children>
+                  <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="form-label" text="Starts on" />
+                        <DatePicker fx:id="startDate" maxWidth="Infinity" styleClass="field" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="form-label" text="Start time (HH:mm)" />
+
+                        <HBox spacing="8.0">
+                           <TextField fx:id="startTime"
+                                      promptText="e.g. 9:30"
+                                      HBox.hgrow="ALWAYS"
+                                      styleClass="field" />
+                           <ComboBox fx:id="startAmPm"
+                                     minWidth="90.0"
+                                     prefWidth="90.0"
+                                     styleClass="field" />
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="form-label" text="Due date *" />
+                        <DatePicker fx:id="dueDate" maxWidth="Infinity" styleClass="field" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="form-label" text="Due time (HH:mm)" />
+
+                        <HBox spacing="8.0">
+                           <TextField fx:id="dueTime"
+                                      promptText="e.g. 5:00"
+                                      HBox.hgrow="ALWAYS"
+                                      styleClass="field" />
+                           <ComboBox fx:id="dueAmPm"
+                                     minWidth="90.0"
+                                     prefWidth="90.0"
+                                     styleClass="field" />
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+
+            <VBox spacing="4.0">
+               <children>
+                  <Label styleClass="form-label" text="Status" />
+                  <ComboBox fx:id="statusBox" maxWidth="Infinity" styleClass="field" value="Pending" />
+               </children>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="form-error" wrapText="true" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="8.0">
+               <children>
+                  <Button onAction="#onCancelClicked" styleClass="btn" text="Cancel" />
+                  <Button onAction="#onSaveClicked" styleClass="btn, btn-primary" text="Save" />
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </children>
+</StackPane>

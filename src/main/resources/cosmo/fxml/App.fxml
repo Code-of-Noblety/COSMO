@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="root" minHeight="700.0" minWidth="1100.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.MainController">
+
+   <stylesheets>
+      <URL value="@../css/theme.css" />
+      <URL value="@../css/layout.css" />
+      <URL value="@../css/controls.css" />
+      <URL value="@../css/badges.css" />
+      <URL value="@../css/table.css" />
+   </stylesheets>
+
+   <children>
+
+
+      <BorderPane styleClass="app-bg">
+         <left>
+            <fx:include fx:id="sidebar" source="Sidebar.fxml" />
+         </left>
+         <center>
+            <StackPane alignment="TOP_CENTER">
+               <children>
+                  <fx:include fx:id="dashboard" source="Dashboard.fxml" />
+                  <fx:include fx:id="allTasks" source="AllTasks.fxml" />
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+
+
+      <fx:include fx:id="taskForm" source="TaskForm.fxml" />
+      <fx:include fx:id="confirmDelete" source="ConfirmDelete.fxml" />
+
+   </children>
+</StackPane>

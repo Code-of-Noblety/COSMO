@@ -1,0 +1,138 @@
+
+
+/* 1. BUTTONS  */
+
+.btn {
+    -fx-background-color: -cosmo-card;
+    -fx-background-insets: 0;
+    -fx-background-radius: 8;
+    -fx-border-color: -cosmo-line;
+    -fx-border-radius: 8;
+    -fx-text-fill: -cosmo-text;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+.btn:hover    { -fx-background-color: -cosmo-hover; }
+.btn:disabled { -fx-opacity: 0.4; }
+
+.btn-primary {
+    -fx-background-color: -cosmo-accent;
+    -fx-border-color: -cosmo-accent;
+    -fx-text-fill: -cosmo-on-accent;
+    -fx-font-weight: 600;
+}
+.btn-primary:hover { -fx-background-color: -cosmo-accent; -fx-opacity: 0.9; }
+
+.btn-danger { -fx-text-fill: -cosmo-red; }
+
+.btn-danger-solid {
+    -fx-background-color: -cosmo-red;
+    -fx-border-color: -cosmo-red;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+}
+.btn-danger-solid:hover { -fx-background-color: -cosmo-red; -fx-opacity: 0.9; }
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-text-fill: -cosmo-muted;
+    -fx-font-size: 14px;
+    -fx-padding: 2 6 2 6;
+    -fx-cursor: hand;
+}
+.icon-button:hover { -fx-background-color: -cosmo-hover; -fx-background-radius: 6; }
+
+/* 2. TEXT FIELDS, DROPDOWN BUTTONS, DATE PICKERS */
+
+.field {
+    -fx-background-color: -cosmo-card;
+    -fx-background-radius: 8;
+    -fx-border-color: -cosmo-line;
+    -fx-border-radius: 8;
+    -fx-text-fill: -cosmo-text;
+    -fx-prompt-text-fill: -cosmo-placeholder;
+}
+.field:focused { -fx-border-color: -cosmo-accent; }
+
+.text-field.field   { -fx-padding: 8 10 8 10; }
+.text-area.field    { -fx-padding: 2; }
+.text-area.field .content { -fx-background-color: -cosmo-card; -fx-background-radius: 8; }
+
+.combo-box.field                   { -fx-padding: 0; }
+.combo-box.field .list-cell        { -fx-text-fill: -cosmo-text; -fx-background-color: transparent; -fx-padding: 8 10 8 10; }
+.combo-box.field .arrow-button     { -fx-background-color: transparent; }
+.combo-box.field .arrow            { -fx-background-color: -cosmo-muted; }
+
+.date-picker.field                 { -fx-padding: 0; }
+.date-picker.field .text-field     { -fx-background-color: transparent; -fx-text-fill: -cosmo-text; -fx-padding: 8 10 8 10; }
+.date-picker.field .arrow-button   { -fx-background-color: transparent; }
+.date-picker.field .arrow-button .arrow { -fx-background-color: -cosmo-muted; }
+
+/* 3. DROPDOWN LISTS (the window that opens under a dropdown)  */
+
+
+.combo-box-popup {
+    -fx-background-color: -cosmo-card;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-effect: null;
+}
+.combo-box-popup > .list-view {
+    -fx-background-color: -cosmo-card;
+    -fx-background-insets: 0;
+    -fx-border-color: -cosmo-line;
+    -fx-effect: null;
+}
+.date-picker-popup { -fx-effect: null; -fx-border-color: -cosmo-line; }
+.context-menu      { -fx-effect: null; }
+
+
+.combo-box-popup .list-cell {
+    -fx-background-color: -cosmo-card;
+    -fx-text-fill: -cosmo-text;
+    -fx-font-size: 13px;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+.combo-box-popup .list-cell:filled:focused        { -fx-background-color: -cosmo-card; -fx-text-fill: -cosmo-text; }
+.combo-box-popup .list-cell:filled:hover          { -fx-background-color: -cosmo-menu-hover; -fx-text-fill: -cosmo-text; }
+.combo-box-popup .list-cell:filled:selected       { -fx-background-color: -cosmo-active; -fx-text-fill: -cosmo-accent; -fx-font-weight: 700; }
+.combo-box-popup .list-cell:filled:selected:hover { -fx-background-color: -cosmo-menu-hover; -fx-text-fill: -cosmo-accent; -fx-font-weight: 700; }
+
+/* 4. CHECK CIRCLE AND PROGRESS BAR */
+
+.check-circle {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+    -fx-border-color: -cosmo-muted;
+    -fx-border-width: 2;
+    -fx-border-radius: 9;
+    -fx-min-width: 18;  -fx-pref-width: 18;  -fx-max-width: 18;
+    -fx-min-height: 18; -fx-pref-height: 18; -fx-max-height: 18;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+.check-circle:selected { -fx-background-color: -cosmo-accent; -fx-border-color: -cosmo-accent; }
+
+
+.progress-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-min-height: 5;  -fx-pref-height: 5;  -fx-max-height: 5;
+}
+.progress-bar > .track {
+    -fx-background-color: -cosmo-track;
+    -fx-background-insets: 0;
+    -fx-background-radius: 99;
+    -fx-padding: 0;
+}
+.progress-bar > .bar {
+    -fx-background-color: -cosmo-accent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 99;
+    -fx-padding: 0;
+}

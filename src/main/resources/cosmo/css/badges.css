@@ -1,0 +1,53 @@
+
+
+.pill {
+    -fx-font-size: 11.5px;
+    -fx-font-weight: 500;
+    -fx-padding: 3 10 3 10;
+    -fx-background-radius: 99;
+    -fx-alignment: center;
+}
+.pill-academic { -fx-background-color: -cosmo-academic-bg; -fx-text-fill: -cosmo-academic-text; }
+.pill-personal { -fx-background-color: -cosmo-personal-bg; -fx-text-fill: -cosmo-personal-text; }
+.pill-work     { -fx-background-color: -cosmo-work-bg;     -fx-text-fill: -cosmo-work-text; }
+.pill-other    { -fx-background-color: -cosmo-other-bg;    -fx-text-fill: -cosmo-other-text; }
+
+/* STATUS COLORS (used by pills AND by the status dropdown) */
+
+.status-pending     { -fx-background-color: -cosmo-hover;  -fx-text-fill: -cosmo-muted; }
+.status-in-progress { -fx-background-color: -cosmo-active; -fx-text-fill: -cosmo-accent; -fx-font-weight: 600; }
+.status-completed   { -fx-background-color: transparent;   -fx-text-fill: -cosmo-muted;
+                      -fx-border-color: -cosmo-line; -fx-border-radius: 99; }
+
+/* STATUS DROPDOWN (a ComboBox shaped like a pill)  */
+
+.combo-status {
+    -fx-background-radius: 99;
+    -fx-min-width: 112; -fx-pref-width: 112; -fx-max-width: 112;
+    -fx-min-height: 24; -fx-pref-height: 24; -fx-max-height: 24;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+.combo-status .list-cell {
+    -fx-background-color: transparent;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: 600;
+    -fx-padding: 3 4 3 12;
+}
+.combo-status .arrow-button { -fx-background-color: transparent; -fx-padding: 0 8 0 0; }
+.combo-status .arrow        { -fx-background-color: -cosmo-muted; -fx-padding: 2.5; }
+.status-pending .list-cell     { -fx-text-fill: -cosmo-muted; }
+.status-in-progress .list-cell { -fx-text-fill: -cosmo-accent; }
+.status-completed .list-cell   { -fx-text-fill: -cosmo-muted; }
+
+/*  PRIORITY (plain colored text)  */
+
+.priority-high   { -fx-text-fill: -cosmo-accent; -fx-font-weight: 700; }
+.priority-medium { -fx-text-fill: -cosmo-text; -fx-font-weight: 600; }
+.priority-low    { -fx-text-fill: -cosmo-muted; -fx-font-weight: 500; }
+
+/* RED AND AMBER TEXT  */
+
+.due-late     { -fx-text-fill: -cosmo-red; -fx-font-weight: 600; }   /* due text of an overdue dashboard row */
+.note-overdue { -fx-text-fill: -cosmo-red; }                          /* "● Overdue" in the details panel */
+.note-today   { -fx-text-fill: -cosmo-amber; }                        /* "● Due today" in the details panel */

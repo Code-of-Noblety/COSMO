@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxWidth="1120.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.pages.AllTasksController">
+   <padding>
+      <Insets bottom="28.0" left="40.0" right="40.0" top="36.0" />
+   </padding>
+   <children>
+
+      <Label styleClass="page-title" text="All Tasks" />
+      <Label styleClass="page-subtitle" text="Click a task to see its details. Change its status right from the list." />
+
+      <!-- Search, three filters, sort, New Task -->
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <VBox.margin>
+            <Insets bottom="14.0" />
+         </VBox.margin>
+         <children>
+            <TextField fx:id="searchField" maxWidth="Infinity" promptText="Search tasks…" styleClass="field" HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="statusFilter" prefWidth="140.0" styleClass="field" />
+            <ComboBox fx:id="categoryFilter" visibleRowCount="4" prefWidth="170.0" styleClass="field" />
+            <ComboBox fx:id="priorityFilter" prefWidth="150.0" styleClass="field" />
+            <ComboBox fx:id="sortBox" prefWidth="200.0" styleClass="field" />
+            <Button onAction="#onNewTaskClicked" styleClass="btn, btn-primary" text="+ New Task" />
+         </children>
+      </HBox>
+
+      <!-- Table card on the left, details panel on the right.
+           HOW THE CARD HEIGHT WORKS:
+             maxHeight="-Infinity"   the card is never taller than its own rows
+             minHeight="0.0"         the card may shrink when the window is short
+           When it shrinks, the table's own scroll bar appears. -->
+      <HBox minHeight="0.0" spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+
+            <VBox maxHeight="-Infinity" maxWidth="Infinity" minHeight="0.0" minWidth="0.0" styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="taskTable" minHeight="0.0" styleClass="task-table">
+                     <columns>
+                        <TableColumn fx:id="doneColumn" maxWidth="44.0" minWidth="44.0" prefWidth="44.0" sortable="false" text="" />
+                        <TableColumn fx:id="titleColumn" minWidth="140.0" prefWidth="240.0" sortable="false" text="Title" />
+                        <TableColumn fx:id="categoryColumn" minWidth="92.0" prefWidth="104.0" sortable="false" text="Category" />
+                        <TableColumn fx:id="priorityColumn" minWidth="66.0" prefWidth="80.0" sortable="false" text="Priority" />
+                        <TableColumn fx:id="startColumn" minWidth="92.0" prefWidth="110.0" sortable="false" text="Starts" />
+                        <TableColumn fx:id="dueColumn" minWidth="100.0" prefWidth="120.0" sortable="false" text="Due" />
+                        <TableColumn fx:id="statusColumn" minWidth="124.0" prefWidth="130.0" sortable="false" text="Status" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS" />
+                     </columnResizePolicy>
+                     <placeholder>
+                        <Label styleClass="muted-small" text="No tasks match your filters." />
+                     </placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+
+            <fx:include fx:id="taskDetails" source="TaskDetails.fxml" />
+         </children>
+      </HBox>
+
+   </children>
+</VBox>

@@ -1,0 +1,122 @@
+
+
+/* 1. WINDOW AND TEXT  */
+
+.root {
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+.label       { -fx-text-fill: -cosmo-text; }   /* default for every label; later rules override it */
+.app-bg      { -fx-background-color: -cosmo-canvas; }
+
+.page-title    { -fx-font-size: 28px; -fx-font-weight: 700; }
+.page-subtitle { -fx-text-fill: -cosmo-muted; -fx-padding: 4 0 22 0; }
+.card-title    { -fx-font-size: 18px; -fx-font-weight: 700; }
+.muted-text    { -fx-text-fill: -cosmo-muted; }
+.muted-small   { -fx-text-fill: -cosmo-muted; -fx-font-size: 12px; }
+
+/*  2. SIDEBAR */
+
+.sidebar {
+    -fx-background-color: -cosmo-sidebar;
+    -fx-border-color: transparent -cosmo-line transparent transparent;   /* right edge only */
+    -fx-border-width: 0 1 0 0;
+}
+.logo { -fx-font-size: 15px; -fx-font-weight: 700; -fx-padding: 0 10 18 10; }
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 8;
+    -fx-text-fill: -cosmo-text;
+    -fx-alignment: center-left;
+    -fx-padding: 9 12 9 12;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+.nav-button:hover    { -fx-background-color: -cosmo-hover; }
+.nav-button:selected { -fx-background-color: -cosmo-active; -fx-font-weight: 600; }
+
+.badge {   /* the red number on "All Tasks" */
+    -fx-background-color: -cosmo-red;
+    -fx-background-radius: 99;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 1 7 1 7;
+}
+
+/*  3. CARDS */
+
+.card {
+    -fx-background-color: -cosmo-card;
+    -fx-background-radius: 12;
+    -fx-border-color: -cosmo-line;
+    -fx-border-radius: 12;
+}
+
+.stat-card  { -fx-padding: 16 18 16 18; }
+.stat-label { -fx-text-fill: -cosmo-muted; -fx-font-size: 12.5px; -fx-font-weight: 500; }
+.stat-value { -fx-font-size: 26px; -fx-font-weight: 700; }
+.stat-sub   { -fx-text-fill: -cosmo-muted; -fx-font-size: 13px; }
+
+/*  4. DASHBOARD ROWS (Today's Schedule)*/
+
+.scroll-clear { -fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0; }
+.scroll-clear > .viewport { -fx-background-color: transparent; }
+
+.section-label {
+    -fx-text-fill: -cosmo-muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-padding: 9 20 7 20;
+    -fx-border-color: -cosmo-line transparent transparent transparent;   /* line above */
+    -fx-border-width: 1 0 0 0;
+}
+.section-overdue { -fx-text-fill: -cosmo-red; }
+
+.task-row {
+    -fx-alignment: center-left;
+    -fx-spacing: 14;
+    -fx-padding: 11 20 11 20;
+    -fx-cursor: hand;
+}
+.task-row:hover    { -fx-background-color: -cosmo-sidebar; }
+.task-row.selected { -fx-background-color: -cosmo-active; }
+
+.row-time      { -fx-font-size: 13px; -fx-font-weight: 600; -fx-min-width: 80; -fx-pref-width: 80; -fx-max-width: 80; }
+.row-check-box { -fx-alignment: center-left; -fx-min-width: 24; -fx-pref-width: 24; -fx-max-width: 24; }
+.row-pill      { -fx-min-width: 104; -fx-pref-width: 104; -fx-max-width: 104; }
+.row-text      { -fx-spacing: 2; }
+.row-title     { -fx-font-weight: 500; }
+.row-meta-line { -fx-spacing: 4; -fx-alignment: center-left; }
+.row-meta      { -fx-text-fill: -cosmo-muted; -fx-font-size: 12px; }
+
+
+.done-text { -fx-strikethrough: true; -fx-text-fill: -cosmo-muted; }
+
+/*  5. DETAILS PANEL  */
+
+.panel-key     { -fx-text-fill: -cosmo-muted; -fx-font-size: 11px; -fx-font-weight: 600; -fx-padding: 14 0 4 0; }
+.details-title { -fx-font-size: 18px; -fx-font-weight: 700; -fx-padding: 8 0 10 0; }
+.panel-text    { -fx-text-fill: -cosmo-text; }
+.panel-note    { -fx-font-size: 12px; -fx-font-weight: 600; -fx-padding: 6 0 0 0; }
+.panel-actions {
+    -fx-padding: 14 0 0 0;
+    -fx-border-color: -cosmo-line transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+/*  6. POPUPS (New/Edit task, Delete) */
+
+.overlay { -fx-background-color: -cosmo-dim; }
+
+.dialog {
+    -fx-background-color: -cosmo-card;
+    -fx-background-radius: 14;
+    -fx-border-color: -cosmo-line;
+    -fx-border-radius: 14;
+}
+.dialog-title { -fx-font-size: 18px; -fx-font-weight: 700; }
+.form-label   { -fx-text-fill: -cosmo-muted; -fx-font-size: 12px; -fx-font-weight: 500; }
+.form-error   { -fx-text-fill: -cosmo-red; -fx-font-size: 12px; }

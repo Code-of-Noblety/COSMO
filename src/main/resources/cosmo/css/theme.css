@@ -1,0 +1,40 @@
+
+
+.root {
+
+    -cosmo-canvas:      #f1f0f7;   /* page background */
+    -cosmo-sidebar:     #f7f6fc;   /* sidebar, table header, row hover */
+    -cosmo-card:        #ffffff;   /* cards, fields, buttons, popups */
+    -cosmo-active:      #e7e4f3;   /* selected nav item / selected row */
+    -cosmo-hover:       #f1f0f7;   /* light hover tint */
+    -cosmo-menu-hover:  #d9d6ee;   /* hovered choice inside dropdown lists */
+    -cosmo-line:        #e8e7f0;   /* every border and divider */
+    -cosmo-dim:         rgba(10, 10, 20, 0.5);   /* dark layer behind popups */
+
+    /* text -*/
+    -cosmo-text:        #1c1b2e;
+    -cosmo-muted:       #6b6a80;
+    -cosmo-placeholder: #8c8b9f;
+
+    /*  accent buttons, progress, High priority */
+    -cosmo-accent:      #2d2468;
+    -cosmo-on-accent:   #ffffff;
+    -cosmo-track:       #e1def2;
+
+    /*overdue red and due today amber*/
+    -cosmo-red:         #d62828;
+    -cosmo-red-tint:    #fff5f5;
+    -cosmo-amber:       #a85d00;
+
+    /* category pills  */
+    -cosmo-academic-bg:   #e3e8fb;   -cosmo-academic-text: #3a4a95;
+    -cosmo-personal-bg:   #dcf3e8;   -cosmo-personal-text: #1f6b4f;
+    -cosmo-work-bg:       #eee4f8;   -cosmo-work-text:     #6a3a92;
+    -cosmo-other-bg:      #fff0d6;   -cosmo-other-text:    #85530a;
+
+
+    -fx-accent:                   -cosmo-accent;
+    -fx-focus-color:              -cosmo-accent;
+    -fx-faint-focus-color:        transparent;
+    -fx-control-inner-background: -cosmo-card;
+}

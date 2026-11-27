@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxWidth="220.0" minWidth="220.0" prefWidth="220.0" spacing="4.0" styleClass="sidebar" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.parts.SidebarController">
+   <padding>
+      <Insets bottom="24.0" left="14.0" right="14.0" top="24.0" />
+   </padding>
+   <children>
+
+      <!-- (Note: we wont be putting logo anymore) -->
+      <Label styleClass="logo" text="COSMO" />
+
+      <!-- Both buttons belong to the group "navGroup", so only one is selected at a time -->
+      <ToggleButton fx:id="navDashboard" maxWidth="Infinity" onAction="#onShowDashboard" selected="true" styleClass="nav-button" text="Dashboard">
+         <toggleGroup>
+            <ToggleGroup fx:id="navGroup" />
+         </toggleGroup>
+      </ToggleButton>
+
+
+      <StackPane>
+         <children>
+            <ToggleButton fx:id="navAllTasks" maxWidth="Infinity" onAction="#onShowAllTasks" styleClass="nav-button" text="All Tasks" toggleGroup="$navGroup" />
+            <Label fx:id="overdueBadge" mouseTransparent="true" styleClass="badge" text="1" StackPane.alignment="CENTER_RIGHT">
+               <StackPane.margin>
+                  <Insets right="12.0" />
+               </StackPane.margin>
+            </Label>
+         </children>
+      </StackPane>
+
+   </children>
+</VBox>

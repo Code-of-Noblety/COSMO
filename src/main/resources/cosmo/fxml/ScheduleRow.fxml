@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="root" styleClass="task-row" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.parts.ScheduleRowController">
+   <children>
+      <Label fx:id="timeLabel" styleClass="row-time" text="9:00 AM" />
+
+      <StackPane styleClass="row-check-box">
+         <children>
+            <ToggleButton fx:id="doneToggle" onAction="#onToggleDone" styleClass="check-circle" />
+         </children>
+      </StackPane>
+
+      <VBox maxWidth="Infinity" styleClass="row-text" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="titleLabel" styleClass="row-title" text="Finish Digital Logic Design" />
+            <HBox styleClass="row-meta-line">
+               <children>
+                  <Label fx:id="priorityLabel" styleClass="priority-high" text="⚑ High" />
+                  <Label styleClass="row-meta" text="·" />
+                  <Label fx:id="dueLabel" styleClass="row-meta" text="Due Today, 5:00 PM" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <Label fx:id="categoryPill" styleClass="pill, row-pill, pill-academic" text="Academic" />
+      <ComboBox fx:id="statusBox" onAction="#onStatusPicked" styleClass="combo-status, status-in-progress" value="In Progress" />
+   </children>
+</HBox>

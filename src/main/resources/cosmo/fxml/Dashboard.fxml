@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxWidth="1120.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmo.ui.pages.DashboardController">
+   <padding>
+      <Insets bottom="28.0" left="40.0" right="40.0" top="36.0" />
+   </padding>
+   <children>
+
+      <Label fx:id="dateLabel" styleClass="page-title" text="Saturday, November 21" />
+      <Label styleClass="page-subtitle" text="Here’s your schedule for today. Click a task to see its details." />
+
+      <!-- The three stat cards (they share the width equally) -->
+      <HBox spacing="16.0">
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+         <children>
+            <VBox maxWidth="Infinity" prefWidth="300.0" spacing="4.0" styleClass="card, stat-card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="stat-label" text="Total Tasks" />
+                  <Label fx:id="totalValue" styleClass="stat-value" text="9" />
+               </children>
+            </VBox>
+            <VBox maxWidth="Infinity" prefWidth="300.0" spacing="4.0" styleClass="card, stat-card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="stat-label" text="Completed" />
+                  <HBox alignment="BASELINE_LEFT" spacing="4.0">
+                     <children>
+                        <Label fx:id="completedValue" styleClass="stat-value" text="11%" />
+                        <Label fx:id="completedCount" styleClass="stat-sub" text="1 of 9" />
+                     </children>
+                  </HBox>
+                  <ProgressBar fx:id="completedBar" maxWidth="Infinity" progress="0.11">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </ProgressBar>
+               </children>
+            </VBox>
+            <VBox maxWidth="Infinity" prefWidth="300.0" spacing="4.0" styleClass="card, stat-card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="stat-label" text="Pending High-Priority" />
+                  <Label fx:id="highValue" styleClass="stat-value" text="3" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+      <!-- Schedule card + details panel.
+           HOW THE CARD HEIGHT WORKS:
+             maxHeight="-Infinity"   the card is never taller than its own rows
+             minHeight="0.0"         the card may shrink when the window is short
+           When it shrinks, the ScrollPane inside it scrolls. -->
+      <HBox minHeight="0.0" spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox maxHeight="-Infinity" maxWidth="Infinity" minHeight="0.0" styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="BASELINE_LEFT">
+                     <padding>
+                        <Insets bottom="12.0" left="20.0" right="20.0" top="16.0" />
+                     </padding>
+                     <children>
+                        <Label styleClass="card-title" text="Today’s Schedule" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="nowLabel" styleClass="muted-small" text="Now: 10:30 AM" />
+                     </children>
+                  </HBox>
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" minHeight="0.0" styleClass="scroll-clear">
+                     <content>
+                        <VBox fx:id="scheduleList" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+
+            <fx:include fx:id="taskDetails" source="TaskDetails.fxml" />
+         </children>
+      </HBox>
+
+   </children>
+</VBox>

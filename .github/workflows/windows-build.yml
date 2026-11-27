@@ -1,0 +1,55 @@
+
+name: COSMO Windows Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-windows:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+
+      - name: Build JAR
+        run: mvn --batch-mode clean package
+
+      - name: Prepare release files
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist_release
+          New-Item -ItemType Directory -Force -Path staging
+
+          Copy-Item target/cosmo-todo-1.0.0.jar staging/COSMO.jar
+          Copy-Item target/cosmo-todo-1.0.0.jar dist_release/COSMO.jar
+
+      - name: Build Windows EXE installer
+        run: |
+          jpackage `
+            --type exe `
+            --name COSMO `
+            --input staging `
+            --main-jar COSMO.jar `
+            --main-class cosmo.Launcher `
+            --dest dist_release `
+            --app-version 1.0.0 `
+            --win-menu `
+            --win-shortcut
+
+      - name: Upload release files
+        uses: actions/upload-artifact@v4
+        with:
+          name: COSMO-Windows-Release
+          path: dist_release/
+          if-no-files-found: error

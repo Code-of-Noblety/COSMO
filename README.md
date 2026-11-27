@@ -65,7 +65,7 @@ Rule of thumb: **sizes in FXML, looks in CSS, behavior in Java.** No hex code ou
   to design; **untick before saving**.
 * `Dashboard.fxml` shows an empty schedule list on purpose. Design the row in `ScheduleRow.fxml`.
 
-## 7. Design patterns and principles used (for your reflection)
+## 7. Design patterns and principles used
 | Idea | Where |
 |------|-------|
 | Single responsibility | one FXML + one controller per screen part; `TaskTableCells` only draws cells |

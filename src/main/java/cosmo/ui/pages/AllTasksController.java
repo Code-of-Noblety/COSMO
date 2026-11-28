@@ -236,7 +236,10 @@ public void setTasks(ObservableList<TaskView> tasks) {
             comparator = Comparator.comparing(
                     task -> LocalDateTime.of(task.startDate(), task.startTime())
             );
-        }
+        } else if ("Creation Order".equals(sort)) {
+            comparator = Comparator.comparing(TaskView::createdAt).reversed();
+}
+        
 
         sortedTasks.setComparator(comparator);
     }

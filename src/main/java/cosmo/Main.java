@@ -28,7 +28,7 @@ public class Main extends Application {
         stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
         stage.getIcons().add(
-            new Image(Main.class.getResourceAsStream("/cosmo/images/icon.png"))
+            new Image(Main.class.getResourceAsStream("/cosmo/images/cosmo.png"))
         );
         stage.show();
     }

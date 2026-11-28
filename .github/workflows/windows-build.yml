@@ -44,7 +44,7 @@ jobs:
             --main-class cosmo.Launcher `
             --dest dist_release `
             --app-version 1.0.0 `
-            --icon icons/COSMO.ico `
+            --icon icons/cosmo.ico `
             --win-menu `
             --win-shortcut
 
